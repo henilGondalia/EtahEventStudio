@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: popLight;
+  src: url("./fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: popRagular;
+  src: url("./fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: popMedium;
+  src: url("./fonts/Poppins-Medium.ttf");
+}
+
+body {
+  font-family: popLight;
+}
+
+.portfolio {
+  color: #ffffff;
+  background: radial-gradient(#a7451b, #260e01);
+  min-height: 100vh;
+}
+
+nav {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  z-index: 1;
+  background-color: white;
+  color: black;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(-100%);
+}
+.contact {
+  grid-column: 2/3;
+}
+.social {
+  grid-column: 4/4;
+}
+.nav-open h3 {
+  padding-bottom: 5px;
+}
+.social-links .icon {
+  padding: 0 5px;
+  transition: all 0.2s ease-out;
+  display: inline-block;
+  cursor: pointer;
+}
+.social-links .icon:hover {
+  transform: scale(1.5, 1.5);
+  color: #6e7d8c;
+}
+.logo {
+  z-index: 2;
+}
+.menu {
+  cursor: pointer;
+  z-index: 2;
+}
+.page {
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+.photographer,
+.stylist,
+.makeup {
+  position: absolute;
+  bottom: 10vh;
+  left: 0%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero {
+  overflow: hidden;
+  height: 500px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+}
+
+.hero a {
+  display: flex;
+}
+
+.hero img {
+  height: 500px;
+  transition: transform 0.9 ease-in;
+  cursor: pointer;
+}
+.model-right {
+  transform: translate(0, -10%);
+}
+.model-left {
+  transform: translate(0, 10%);
+}
+.hero:hover .model-right {
+  transform: translate(0%, 0%);
+}
+.hero:hover .model-left {
+  transform: translate(0%, 0%);
+}
+.details {
+  grid-column: 2/3;
+  align-self: end;
+}
+.details h1 {
+  font-size: 50px;
+  font-family: popRagular;
+}
+.details h2 {
+  font-size: 38px;
+  padding: 20px 0 25px 0;
+}
+.pages {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.pages > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pages h3 {
+  font-size: 24px;
+  padding: 30px;
+}
+.pages svg {
+  cursor: pointer;
+  opacity: 0.5;
+  transform: scale(2);
+}
+.pages svg:hover {
+  animation: dot 0.5 ease-in-out infinite alternate;
+}
+.pages svg.active {
+  opacity: 1;
+}
+
+@keyframes dot {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+
+/* Story pages*/
+.banner {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+.banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.authour {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+}
+.story {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 80px 0px;
+}
+.storydiscription {
+  width: 50%;
+}
+.storydiscription h3 {
+  padding-bottom: 40px;
+}
+.storydiscription p {
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.profile {
+  display: block;
+  margin: auto;
+}
+.story img {
+  width: 80%;
+  height: 80%;
+  float: right;
+}
+
+#home {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #363636;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  color: #ffffff;
+  text-align: center;
+  animation: buttonFadeInUp 1s ease;
+}
+#home i {
+  font-size: 25px;
+  line-height: 56px;
+}
+#home:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@keyframes buttonFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
