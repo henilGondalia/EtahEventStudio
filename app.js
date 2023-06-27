@@ -72,19 +72,23 @@ function init() {
   }
 
   const hamberger = document.querySelector(".menu");
+  const close = document.querySelector(".close");
   const logo = document.querySelectorAll(".logo path");
   const hambergerLines = document.querySelectorAll(".menu line");
+  const closeIcon = document.querySelectorAll(".close line");
   const navOpen = document.querySelector(".nav-open");
   const contact = document.querySelector(".contact");
   const social = document.querySelector(".social");
 
   const tl = new TimelineMax({ paused: true, reversed: true });
   tl.to(navOpen, 0.5, { y: 0 })
+    .fromTo(close, 0.5, { display: "none" }, { display: "block" }, "-=0.5")
+    .fromTo(hamberger, 0.2, { display: "block" }, { display: "none" }, "-=1.1")
     .fromTo(contact, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.1")
     .fromTo(social, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.5")
     .fromTo(logo, 0.2, { fill: "white" }, { fill: "black" }, "-=1")
     .fromTo(
-      hambergerLines,
+      closeIcon,
       0.2,
       { stroke: "white" },
       { stroke: "black" },
@@ -92,6 +96,9 @@ function init() {
     );
 
   hamberger.addEventListener("click", () => {
+    tl.reversed() ? tl.play() : tl.reverse();
+  });
+  close.addEventListener("click", () => {
     tl.reversed() ? tl.play() : tl.reverse();
   });
 }

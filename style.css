@@ -75,9 +75,12 @@ nav {
 .logo {
   z-index: 2;
 }
-.menu {
+.menu, .close, .nav_icons {
   cursor: pointer;
   z-index: 2;
+}
+.close {
+  display: "none"
 }
 .page {
   min-height: 80vh;
